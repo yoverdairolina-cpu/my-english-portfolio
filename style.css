@@ -1,0 +1,298 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+}
+
+
+/* HEADER */
+
+header{
+    background:#8b0000;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 50px;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffb3b3;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:450px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #7a0000,
+        #b30000,
+        #ff4d4d
+    );
+
+    color:white;
+
+    padding:60px 20px;
+
+    animation:appear 1s ease;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+
+/* BOTÓN */
+
+button{
+    background:white;
+    color:#a00000;
+
+    border:none;
+
+    padding:14px 35px;
+
+    border-radius:30px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ffe5e5;
+}
+
+
+/* TARJETAS */
+
+.cards{
+    width:90%;
+    max-width:850px;
+
+    margin:50px auto;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+}
+
+.card{
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,0.12);
+
+    border-left:6px solid #b30000;
+
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    color:#a00000;
+    margin-bottom:15px;
+    font-size:27px;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+
+/* SKILLS */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skills span{
+    background:#b30000;
+    color:white;
+
+    padding:9px 16px;
+
+    border-radius:25px;
+
+    transition:0.3s;
+}
+
+.skills span:hover{
+    background:#ff3333;
+    transform:scale(1.08);
+}
+
+
+/* ANIMACIÓN DE TARJETAS */
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#7a0000;
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:50px;
+}
+
+
+/* ANIMACIÓN INICIAL */
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* TABLET Y CELULAR */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:20px;
+        gap:15px;
+    }
+
+    nav{
+        gap:12px;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .cards{
+        width:92%;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+}
+
+
+/* CELULARES PEQUEÑOS */
+
+@media(max-width:480px){
+
+    header h2{
+        font-size:19px;
+    }
+
+    nav{
+        gap:8px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .card h2{
+        font-size:23px;
+    }
+
+}
